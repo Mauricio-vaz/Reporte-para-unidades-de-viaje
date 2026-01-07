@@ -3,88 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROCESADO</title>
+    <link rel="stylesheet" href="prueba.css">
+    <title>GRIT</title>
 </head>
 <style>
-    body{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        margin: 20px;
-        background: #719774;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .container, .container2{
-        margin-bottom: 20px;
-    }
-.container :checked, .container2 :checked{
-        width: 20px;
-        height: auto;
-        accent-color: #4CAF50;
-    }
-
-    .container input, .container2 input{
-        margin: 5px;
-        padding: 5px;
-        border-radius: 10px;
-        border: none;
-    }
-    .container button, .container2 button{
-        border-radius: 8px;
-        border: none;
-        padding: 8px;
-    }
-
-    .controler{
-        margin-top: 20px;
-    }
-
-    .controler button{
-        margin: 5px;
-        border-radius: 10px;
-        border: none;
-        padding: 10px;
-}
-#agreabj, #agreabj2{
-    margin: 5px;
-    border-radius: 8px;
-    border: none;
-    padding: 8px;
-}
-button:hover{
-    background: #4CAF50;
-    color: white;
-    cursor: pointer;
-}
+    
 </style>
 <body>
+    <header>
+        <h1>GRIT</h1>
+        <p>Control De Actividades Diarias</p>
+    </header>
     <div class="container">
-    <label>Nombre:</label>
-    <input type="text">
-    <input type="text" placeholder="Plana">
-    <input type="checkbox">
-    <input type="text" placeholder="Plana">
-    <input type="checkbox">
-    <button>Agregar</button>
+        <label for="">Nuevo Habito:</label>
+        <input type="text" >
+        <button class="btnH">Agregar</button>
+        <button class="btnM">Modificar</button>
+        <p>HABITOS</p>
     </div>
-    <button id="agreabj">Agregar</button>
-
-    <div class="container2">
-        <label for="">Nombre</label>
-        <input type="text">
-        <input type="text" placeholder="Unidad">
-        <input type="checkbox">
-        <input type="text" placeholder="Unidad">
-        <input type="checkbox">
-        <button>Agregar</button>
-    </div>
-    <button id="agreabj2">Agregar</button>
-
-    <div class="controler">
-        <button>Terminar</button>
-        <button>Copiar</button>
-    </div>
-
-
+    
 </body>
 </html>
