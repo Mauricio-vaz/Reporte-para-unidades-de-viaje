@@ -23,3 +23,11 @@ header{
     border-radius: 10px;
     background-color: #f0f0f0;
 }
+.habitos{
+    justify-content: space-around;
+    align-items: center;
+}
+
+.habitos p{
+    margin: 5px;
+}
