@@ -16,22 +16,80 @@
     </header>
     <div class="container">
         <label for="">Nuevo Habito:</label>
-        <input type="text" >
-        <button class="btnH">Agregar</button>
+        <input type="text" id="inputHabito" >
+        <button class="btnH" onclick="agregarHabito()">Agregar</button>
         <button class="btnM">Modificar</button>
         <p>HABITOS</p>
-
+        <div class="habitos">
         <p><input type="checkbox"> Hacer la cama</p>
-        <p><input type="checkbox"> Agradecer</p>
-        <p><input type="checkbox"> Ejercitarme</p>
-        <p><input type="checkbox"> Oficio</p>
-        <p><input type="checkbox"> Comida</p>
-        <p><input type="checkbox"> Leer</p>
-        <p><input type="checkbox"> Lavar trastes</p>
-        <p><input type="checkbox"> 10 pesos diarios</p>
-        <p><input type="checkbox"> Tomar suficiente agua</p>
-        <p><input type="checkbox"> Leer un versiculo</p>
+        </div>
+
     </div>
+
+    <script>
+        let habitos =JSON.parse(localStorage.getItem("habitos")) || [];
+
+        function guardarHabitos(){
+            localStorage.setItem("habitos", JSON.stringify(habitos));
+        }
+
+        function renderHabitos(){
+            const contenedor = document.querySelector(".habitos");
+            contenedor.innerHTML = "";
+
+            habitos.forEach((habito, index)=>{
+                const p = document.createElement("p");
+
+                p.innerHTML = `
+                <input type= "checkbox" ${habito.completado ? "checked" : ""}
+                    onchange="toggleHabito(${index})">
+                ${habito.texto}
+                <button onclick="editarHabito(${index})">✏</button>
+                <button onclick="eliminarHabito(${index})">🗑</button>
+                `;
+                contenedor.appendChild(p);
+            });
+        }
+
+        function agregarHabito(){
+            const input = document.querySelector("input[type= 'text']");
+            if(!input.value.trim()) return;
+
+            habitos.push({texto: input.value, completado: false});
+
+            input.value = "";
+            guardarHabitos();
+            renderHabitos();
+        }
+
+        //marcar o desmarcar un habito
+
+        function toggleHabito(index){
+            habitos[index].completado = !habitos[index].completado;
+            guardarHabitos();
+            renderHabitos();
+        }
+
+        //Eliminar Habito
+        function eliminarHabito(index){
+            habitos.splice(index, 1);
+            guardarHabitos();
+            renderHabitos();
+        }
+
+        //editar habito
+        function editarHabito(index){
+            const nuevo = prompt("Editar Habito:", habitos[index].texto);
+            if(nuevo){
+                habitos[index].texto = nuevo;
+                guardarHabitos();
+                renderHabitos();
+            }
+        }
+
+        renderHabitos();
+
+    </script>
     
 </body>
 </html>
