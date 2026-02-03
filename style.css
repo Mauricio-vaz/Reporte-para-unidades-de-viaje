@@ -2,13 +2,45 @@ body{
     background: #a22f55;
 }
 
+input[type="checkbox"]{
+    appearance: none;
+    width: 35px;
+    height: 22px;
+    background: #ccc;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: 0.3s;
+}
+
+input[type="checkbox"]:checked {
+    background: #592355;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: translateX(13px);
+}
+
 .contenedor1{
-    width: 98%;
+    width: 100%;
     margin: 20px;
     padding: 10px;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 8px;
     background: #b16b82;
 }
 
@@ -33,32 +65,23 @@ body{
 }
 
 .contenedor2{
-    width: 98%;
+    width: 100%;
     margin: 20px;
     padding: 10px;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 8px;
     background: #b16b82;
 }
 
 #nombre1, #nombre2{
     margin: 10px;
     height: 20px;
-    width: 20%;
     background: #a38787;
     text-align: center;
     border-radius: 8px;
     border: none;
-}
-
-#limpia1, #limpia2, #limpia3{
-    margin: 0;
-}
-.contenedor1 :checked{
-    background: #16074d;
-    color: rgb(76, 10, 131);
-    background-color: #060f5f;
 }
 
 #unidad1, #unidad2{
