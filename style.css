@@ -1,0 +1,89 @@
+body{
+    background: #a22f55;
+}
+
+.contenedor1{
+    width: 98%;
+    margin: 20px;
+    padding: 10px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: #b16b82;
+}
+
+.fila{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.fila input[type="tel"] {
+    flex: 1;
+    
+}
+
+#plana1, #plana2, #plana3{
+    margin: 10px;
+    height: 20px;
+    width: 10%;
+    background: #a38787;
+    text-align: center;
+    border-radius: 8px;
+    border: none;
+}
+
+.contenedor2{
+    width: 98%;
+    margin: 20px;
+    padding: 10px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: #b16b82;
+}
+
+#nombre1, #nombre2{
+    margin: 10px;
+    height: 20px;
+    width: 20%;
+    background: #a38787;
+    text-align: center;
+    border-radius: 8px;
+    border: none;
+}
+
+#limpia1, #limpia2, #limpia3{
+    margin: 0;
+}
+.contenedor1 :checked{
+    background: #16074d;
+    color: rgb(76, 10, 131);
+    background-color: #060f5f;
+}
+
+#unidad1, #unidad2{
+    margin: 10px;
+    height: 20px;
+    width: 30%;
+    background: #a38787;
+    text-align: center;
+    border-radius: 8px;
+    border: none;
+}
+button{
+    margin: 10px;
+    padding: 5px 15px;
+    border-radius: 8px;
+    border: none;
+    background: #592355;
+    color: white;
+    cursor: pointer;
+}
+#resultado{
+    margin: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
