@@ -32,7 +32,7 @@
         <input type="tel" id="plana2" placeholder="Plana">
         <input type="checkbox" id="limpia2">
         </div>
-        <div class="fila">
+        <div class="fila" id="double">
         <input type="tel" id="plana3" placeholder="Plana">
         <input type="checkbox" id="limpia3">
         <input type="checkbox" id="doblete">
@@ -88,7 +88,7 @@
             const plana3 = document.getElementById("plana3").value.trim();
             const limpia1 = document.getElementById("limpia1").checked ? "✅" : "❌"; 
             const check2 = document.getElementById("limpia2").checked;
-            const check3 = document.getElementById("limpia3").checked ? "✅" : "❌";
+            const check3 = document.getElementById("limpia3").checked ? "" : "❌";
             const doblete = document.getElementById("doblete").checked ? "🔄" : " ";
             
             const contenedor1 = document.getElementById("resultado");
@@ -101,7 +101,12 @@
 
             let limpia3 = "";
             if(plana3 !== ""){
-                limpia3 = check3 ? "" : "❌";
+                limpia3 = check3 ? "❌" : "✅";
+            }
+
+            let doble = "";
+            if(document.getElementById("doblete").checked){
+                limpia3 = check3 ? "" : "";
             }
             
 
@@ -146,10 +151,15 @@
                 const contenedor2 = document.getElementById("resultado");
                 const p = document.createElement("p");
 
-                //Mientras el inpút text no haya nada  escrito, el checkbox no arrojara nada
+                //Mientras el inpút text no haya nada escrito, el checkbox no arrojara nada
                 let Ulimpia2 = "";
                 if(unidad2 !== ""){
                     Ulimpia2 = Ucheck ? "✅" : "❌";
+                }
+
+                let Udoble = "";
+                if(document.getElementById("Udoblete").checked){
+                    Ulimpia2 = Ucheck ? "" : "";
                 }
 
                 p.classList.add("parrafo");
