@@ -119,6 +119,7 @@
                 textoFinal += ` VP-${plana3}${limpia3}`;
             }
             textoFinal += `${doblete}`;
+            textoFinal = textoPequeno(textoFinal);//El resultado lo convienerte en texto pequeño
             p.innerHTML = textoFinal;
 
             contenedor1.appendChild(p);
@@ -163,6 +164,7 @@
                     textoFinal2 += ` V-${unidad2}${Ulimpia2}`;
                 }
                 textoFinal2 += `${Udoblete}`;
+                textoFinal2 = textoPequeno(textoFinal2);//El resultado lo convienerte en texto pequeño
                 p.innerHTML = textoFinal2;
                 contenedor2.appendChild(p);
 
@@ -185,9 +187,22 @@
                 document.body.removeChild(textarea);
                 alert('Copiado');
             }
+
+        function textoPequeno(texto) {
+            const mapa = {
+            a:"ᴀ", b:"ʙ", c:"ᴄ", d:"ᴅ", e:"ᴇ", f:"ғ",
+            g:"ɢ", h:"ʜ", i:"ɪ", j:"ᴊ", k:"ᴋ", l:"ʟ",
+            m:"ᴍ", n:"ɴ", o:"ᴏ", p:"ᴘ", q:"ǫ", r:"ʀ",
+            s:"s", t:"ᴛ", u:"ᴜ", v:"ᴠ", w:"ᴡ", x:"x",
+            y:"ʏ", z:"ᴢ"
+        };
+        return texto
+    .toLowerCase()
+    .split("")
+    .map(l => mapa[l] || l)
+    .join("");
+}
+
     </script>
 </body>
 </html>
-
-
-
